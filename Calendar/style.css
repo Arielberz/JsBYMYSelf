@@ -1,0 +1,170 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+#calendar {
+  width: min(900px, 95vw);
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 16px;
+
+  background: black;
+  color: white;
+}
+
+#calendar > h1 {
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+#monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+#monthHeader h1 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+#monthHeader button {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+}
+
+#monthHeader button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 110%;
+  right: 50%;
+  transform: translateX(50%);
+  background: #222;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 9999;
+}
+
+#monthHeader button:hover::after,
+#monthHeader button:focus-visible::after {
+  opacity: 1;
+}
+
+#checkbox {
+  margin-bottom: 16px;
+}
+
+#weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#cal .pad {
+  height: 44px;
+}
+
+#cal button {
+  height: 44px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cal button:hover {
+  background: #f3f3f3;
+}
+
+#cal button.today {
+  background: lightblue;
+  font-weight: bold;
+}
+
+#cal button.selected {
+  outline: 2px solid orange;
+  outline-offset: 2px;
+}
+
+#day {
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+}
+
+#dayname {
+  margin: 0 0 10px 0;
+}
+
+#hours {
+  display: grid;
+  gap: 8px;
+}
+
+.addEventBtn,
+.delEventBtn {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  background: #fff;
+  cursor: pointer;
+}
+
+.emptyEvents {
+  color: #bbb;
+}
+
+.eventsList {
+  display: grid;
+  gap: 8px;
+}
+
+.eventRow {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.eventMain {
+  font-weight: 700;
+}
+
+.eventNotes {
+  margin-top: 6px;
+  color: #ccc;
+}

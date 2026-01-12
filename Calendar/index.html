@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="calendar">
+    <h1>יומן</h1>
+
+    <div id="monthHeader">
+      <button id="prevMonth" title="חודש קודם" data-tooltip="חודש קודם">⇨</button>
+      <h1></h1>
+      <button id="nextMonth" title="חודש הבא" data-tooltip="חודש הבא">⇦</button>
+    </div>
+
+    <div id="checkbox">
+      <label>
+        <input type="checkbox" id="weekbtn" />
+        סידור לפי שבוע
+      </label>
+    </div>
+
+    <div id="weekdays"></div>
+    <div id="cal"></div>
+
+    <div id="day">
+      <h2 id="dayname"></h2>
+      <div id="hours"></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
